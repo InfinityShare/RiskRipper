@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: falconirriskripper 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: falconirriskripper
+  template:
+    metadata:
+      labels:
+        app: falconirriskripper 
+    spec:
+      containers:
+        - name: falconirriskripper 
+          image: wmcon.azurecr.io/falconirriskripper
+          ports:
+          - containerPort: 443
